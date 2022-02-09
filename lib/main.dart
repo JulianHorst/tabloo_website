@@ -1,3 +1,48 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Tabloo',
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+      ),
+      home: const MyHomePage(title: 'Tabloo'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: const Center(
+        child: Text(privacyText),
+      ),
+    );
+  }
+}
+
+const privacyText = """
 At Tabloo, accessible from www.tabloo.app, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Tabloo and how we use it.
 
 If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us. Our Privacy Policy was generated with the help of GDPR Privacy Policy Generator from GDPRPrivacyNotice.com
@@ -48,3 +93,4 @@ Our Privacy Policy applies only to our online activities and is valid for visito
 
 Consent
 By using our website, you hereby consent to our Privacy Policy and agree to its terms.
+""";
